@@ -4,37 +4,25 @@ using System.Linq;
 
 namespace LogicalPrograms
 {
-    internal class MonthPayment
+    internal class SquareNumber
     {
-        public static int Principal, Year;
-        public static double Interest;
-
-        public MonthPayment(int principal, int year, double interest)
+        public static int Number;
+        public SquareNumber(int number)
         {
-            Principal = principal;
-            Year = year;
-            Interest = interest;
-
+            Number = number;
         }
-        public static void calculatePaymnet()
+        public static void calculateSquareRoot()
         {
-            Console.WriteLine("Please Enter Your Principal : ");
-            int principal = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Please Enter Your Year : ");
-            int year = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Please Enter Your Interest : ");
-            double interest = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please Enter Your Number :");
+            int number = Convert.ToInt32(Console.ReadLine());
 
-            int Month = 12 * year;
-            double Rate = interest / (12 * 100);
-            double Payment = (principal * Rate) / (1 - Math.Pow((1 + Rate), -Month));
-            Console.WriteLine("Monthly EMI is : " + Payment);
+            double square = Math.Sqrt(number);
+            Console.WriteLine("SquareRoot Of Number is : " + square);
         }
-
 
         static void Main(string[] args)
         {
-            MonthPayment.calculatePaymnet();
+            SquareNumber.calculateSquareRoot();
         }
     }
 }
