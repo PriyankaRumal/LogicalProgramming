@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace LogicalPrograms
 {
@@ -6,17 +7,10 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number");
-            int n = Convert.ToInt32(Console.ReadLine());
-
-            int rev = 0, rem;
-            while (n != 0)
-            {
-                rem = n % 10;
-                rev = rev * 10 + rem;
-                n = n / 10;
-            }
-            Console.WriteLine("reverse no is :" + rev);
+                string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                Random random = new Random();
+                string result = new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
+                Console.WriteLine(result);
 
         }
     }
